@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import FetchTmdb from "../FetchTmdb";
+import { Container, Navbar, Form, Class, Row } from "react-bootstrap";
 import Filter from "../components/Filter";
 import SearchHeader from "../components/SearchHeader";
 
@@ -23,7 +24,10 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="container">
+    <Container
+      className="container-fluid p-0 bg-black
+    "
+    >
       <SearchHeader />
       <div className="row">
         <div className="col-lg-4">
@@ -31,6 +35,6 @@ export default function Home() {
         </div>
         <div className="col-lg-8"></div>
       </div>
-    </div>
+    </Container>
   );
 }
