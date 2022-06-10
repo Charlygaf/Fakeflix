@@ -20,7 +20,7 @@ export default function Home() {
       }
     };
     getMovies();
-  }, []);
+  }, [page]);
 
   return (
     <div className="container">
@@ -29,7 +29,17 @@ export default function Home() {
         <div className="col-lg-4">
           <Filter />
         </div>
-        <div className="col-lg-8"></div>
+        <div className="col-lg-8">
+          <div>
+            {/* {movies.map((movie) => {
+              return (
+                <div key={movie.id}>
+                  <h3>{movie.title}</h3>
+                </div>
+              );
+            })} */}
+          </div>
+        </div>
       </div>
     </div>
   );
