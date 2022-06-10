@@ -31,6 +31,7 @@ export default function Home() {
         </div>
         <div className="col-lg-8">
           <div>
+            <h3>All movies</h3>
             {/* {movies.map((movie) => {
               return (
                 <div key={movie.id}>

@@ -1,15 +1,27 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Filter() {
   return (
     <div>
-      <h2>Select Filter</h2>
+      <h3>Select Filter</h3>
+
       <ul>
-        <li>By Title</li>
-        <li>By Year</li>
-        <li>By Popularity</li>
-        <li>By Genre</li>
-        <li>By Release Date</li>
+        <li>
+          <Link to="/">By Title</Link>
+        </li>
+        <li>
+          <Link to="">By Year</Link>
+        </li>
+        <li>
+          <Link to="">By Popularity</Link>
+        </li>
+        <li>
+          <Link to="">By Genre</Link>
+        </li>
+        <li>
+          <Link to="">By Release Date</Link>
+        </li>
       </ul>
     </div>
   );
