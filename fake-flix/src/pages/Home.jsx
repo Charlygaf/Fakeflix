@@ -7,6 +7,7 @@ import "./Pages.css";
 import Filter from "../components/Filter";
 import SearchHeader from "../components/SearchHeader";
 import MoviesSearched from "../components/MoviesSearched";
+import "./Home.css";
 
 export default function Home() {
   const [movies, setMovies] = useState([]);
@@ -29,6 +30,18 @@ export default function Home() {
   return (
     <div className="Pages">
       <SearchHeader />
+      <div className="container">
+        <div className="row">
+          {movies.map((movie) => (
+            <div className="col-6 col-md-2 rounded mt-4 " key={movie.id}>
+              <img
+                src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+                alt={movie.title}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
