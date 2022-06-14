@@ -1,0 +1,13 @@
+.bg-img {
+    background-image: linear-gradient(
+        0deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0) 100%
+      ),
+      url("https://assets.nflxext.com/ffe/siteui/vlv3/1691099b-ff71-4321-bd54-1bba46b0886b/d5f24212-3008-4174-92cb-e2f2ecc4aaa6/UY-en-20220228-popsignuptwoweeks-perspective_alpha_website_medium.jpg");
+    width: 100%;
+    min-height: 50vh;
+    object-fit: cover;
+  }
+  

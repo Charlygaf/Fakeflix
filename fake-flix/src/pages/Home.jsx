@@ -3,8 +3,10 @@ import { useState } from "react";
 import { useEffect } from "react";
 import FetchTmdb from "../FetchTmdb";
 import { Container, Navbar, Form, Class, Row } from "react-bootstrap";
+import "./Pages.css";
 import Filter from "../components/Filter";
 import SearchHeader from "../components/SearchHeader";
+import MoviesSearched from "../components/MoviesSearched";
 
 export default function Home() {
   const [movies, setMovies] = useState([]);
@@ -12,40 +14,16 @@ export default function Home() {
 
   useEffect(() => {
     const getMovies = async () => {
-      try {
-        const newMovies = FetchTmdb(null, null, page);
-        setMovies(newMovies);
-        console.log(newMovies);
-      } catch (error) {
-        console.log(error);
-      }
+      const newMovies = FetchTmdb(null, null, page);
+      setMovies(newMovies);
     };
     getMovies();
-  }, [page]);
+    console.log(movies);
+  }, []);
 
   return (
-    <Container
-      className="container-fluid p-0 bg-black
-    "
-    >
+    <div className="Pages">
       <SearchHeader />
-      <div className="row">
-        <div className="col-lg-4">
-          <Filter />
-        </div>
-        <div className="col-lg-8">
-          <div>
-            <h3>All movies</h3>
-            {/* {movies.map((movie) => {
-              return (
-                <div key={movie.id}>
-                  <h3>{movie.title}</h3>
-                </div>
-              );
-            })} */}
-          </div>
-        </div>
-      </div>
-    </Container>
+    </div>
   );
 }
