@@ -14,8 +14,13 @@ export default function Home() {
 
   useEffect(() => {
     const getMovies = async () => {
-      const newMovies = FetchTmdb(null, null, page);
-      setMovies(newMovies);
+      try {
+        const newMovies = await FetchTmdb(null, null, page);
+        setMovies(newMovies);
+        console.log(newMovies);
+      } catch (error) {
+        console.log(error);
+      }
     };
     getMovies();
     console.log(movies);
