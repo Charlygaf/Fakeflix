@@ -10,21 +10,27 @@ import {
   FormControl,
   Button,
 } from "react-bootstrap";
+import { useState } from "react";
 
-function SearchHeader() {
+function SearchHeader({ title, setTitle }) {
+  const handleInput = (e) => {
+    setTitle(e.target.value);
+  };
+
   return (
     <div className="bg-img">
       <div className="container">
-        <div className="row  justify-content-center ">
+        <div className="row  justify-content-center pt-4">
           <div className="col-lg-8 mt-5">
-            <Form className="d-flex">
+            <Form className="d-flex mt-5">
               <FormControl
                 type="search"
-                placeholder="Search"
-                className="me-2"
+                placeholder="Busca tu pelicula preferida..."
+                className=""
                 aria-label="Search"
+                value={title}
+                onChange={handleInput}
               />
-              <Button variant="outline-danger">Search</Button>
             </Form>
           </div>
         </div>

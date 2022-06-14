@@ -8,28 +8,41 @@ import Filter from "../components/Filter";
 import SearchHeader from "../components/SearchHeader";
 import MoviesSearched from "../components/MoviesSearched";
 import "./Home.css";
+import InfiniteScroll from "../components/InfiniteScroll";
 
 export default function Home() {
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(1);
+  const [title, setTitle] = useState("");
 
   useEffect(() => {
     const getMovies = async () => {
-      try {
-        const newMovies = await FetchTmdb(null, null, page);
-        setMovies(newMovies);
-        console.log(newMovies);
-      } catch (error) {
-        console.log(error);
+      if (title === "") {
+        try {
+          const newMovies = await FetchTmdb(null, null, page);
+          setMovies(newMovies);
+          console.log(newMovies);
+        } catch (error) {
+          console.log(error);
+        }
+      } else {
+        try {
+          const searchMovies = await FetchTmdb(title, null, page);
+          setMovies(searchMovies);
+          console.log(searchMovies);
+        } catch (error) {
+          console.log(error);
+        }
       }
     };
     getMovies();
     console.log(movies);
-  }, []);
+  }, [title]);
 
   return (
     <div className="Pages">
-      <SearchHeader />
+      <InfiniteScroll setPage={setPage} />
+      <SearchHeader setTitle={setTitle} title={title} />
       <div className="container">
         <div className="row">
           {movies.map((movie) => (
