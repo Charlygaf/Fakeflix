@@ -11,14 +11,10 @@ function SingleMovie() {
       try {
         const response = await axios({
           method: "get",
-          baseURL: "https://api.themoviedb.org/3/movie/",
-          params: {
-            api_key: "6b7bc1a82647ebf94fa65665cc23fc20",
-            movie_id: `${params.id}`,
-          },
+          baseURL: `https://api.themoviedb.org/3/movie/${params.id}?api_key=6b7bc1a82647ebf94fa65665cc23fc20&language=en-US`,
         });
-        setSingleMovie(response.data.results);
-        console.log(response.data.results);
+        setSingleMovie(response.data);
+        console.log(response.data);
       } catch (error) {
         console.log(error);
       }
@@ -29,6 +25,7 @@ function SingleMovie() {
   return (
     <div>
       <h2>Single Movie</h2>
+      <h3>{singleMovie.title}</h3>
     </div>
   );
 }
