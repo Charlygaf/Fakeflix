@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 function SingleMovie() {
   const [singleMovie, setSingleMovie] = useState([]);
@@ -23,9 +23,26 @@ function SingleMovie() {
   }, []);
 
   return (
-    <div>
-      <h2>Single Movie</h2>
-      <h3>{singleMovie.title}</h3>
+    <div className="container">
+      <div className="row">
+        <div className="col-md-4 mt-5">
+          <img
+            src={`https://image.tmdb.org/t/p/original${singleMovie.poster_path}`}
+            alt={singleMovie.title}
+          />
+        </div>
+        <div className="col-md-8">
+          <h2 className="mt-5">{singleMovie.title}</h2>
+          <span className="mb-5">
+            <strong>{singleMovie.vote_average}/10</strong>
+          </span>
+          <p className="mt-3">{singleMovie.overview}</p>
+          <h5> {singleMovie.release_date}</h5>
+          <Link to="/" className="btn btn-success">
+            Back to home
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }
