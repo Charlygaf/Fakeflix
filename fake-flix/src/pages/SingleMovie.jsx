@@ -30,6 +30,7 @@ function SingleMovie() {
           backgroundImage: `url("https://image.tmdb.org/t/p/original${singleMovie.backdrop_path}")`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
+          height: "100vh",
         }}
       >
         <div className="row px-2 mx-auto">

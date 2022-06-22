@@ -4,4 +4,15 @@ img {
   
     object-fit: cover;
   }
+
+  #movieThumbnail{
+
+     transition: transform 250ms;
+  }
+ 
+  #movieThumbnail:hover{
+    transform: translateY(-30px);
+    transform: scale(1.2);
+    
+  }
   

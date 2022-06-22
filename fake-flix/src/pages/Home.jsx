@@ -7,6 +7,7 @@ import SearchHeader from "../components/SearchHeader";
 import "./Home.css";
 import InfiniteScroll from "../components/InfiniteScroll";
 import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 export default function Home() {
   const [movies, setMovies] = useState([]);
@@ -44,7 +45,11 @@ export default function Home() {
       <div className="container">
         <div className="row">
           {movies.map((movie) => (
-            <div className="col-6 col-md-2 rounded mt-4 " key={movie.id}>
+            <div
+              id="movieThumbnail"
+              className="col-6 col-md-2 rounded mt-4 "
+              key={movie.id}
+            >
               <Link to={`/movie/${movie.id}`}>
                 <img
                   src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}

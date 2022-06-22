@@ -21,7 +21,8 @@ function SearchHeader({ title, setTitle }) {
     <div className="bg-img">
       <div className="container">
         <div className="row  justify-content-center pt-4">
-          <div className="col-lg-8 mt-5">
+          <div className="col-lg-8 mt-5 text-center">
+            <h1 className="titulo">Fake-Flix</h1>
             <Form className="d-flex mt-5">
               <FormControl
                 type="search"
