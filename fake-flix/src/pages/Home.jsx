@@ -8,6 +8,7 @@ import "./Home.css";
 import InfiniteScroll from "../components/InfiniteScroll";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import { Container, Nav } from "react-bootstrap";
 
 export default function Home() {
   const [movies, setMovies] = useState([]);
@@ -19,7 +20,7 @@ export default function Home() {
       if (title === "") {
         try {
           const newMovies = await FetchTmdb(null, null, page);
-          setMovies(newMovies);
+          setMovies((prev) => [...prev, ...newMovies]);
           console.log(newMovies);
         } catch (error) {
           console.log(error);
@@ -36,13 +37,15 @@ export default function Home() {
     };
     getMovies();
     console.log(movies);
-  }, [title]);
+  }, [page]);
 
   return (
     <div className="Pages">
       <InfiniteScroll setPage={setPage} />
+      <Navbar />
       <SearchHeader setTitle={setTitle} title={title} />
-      <div className="container">
+
+      <div className="container ">
         <div className="row">
           {movies.map((movie) => (
             <div
