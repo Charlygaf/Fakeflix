@@ -20,10 +20,13 @@ ul {
   }
 
   h1{
-      font-size: 2rem;
+      font-size: 1.6rem;
       color: red;
       transition: 0.5s;
+      font-weight: bold;
   }
+
+
 h1:hover{
     color: white;
 }

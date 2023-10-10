@@ -1,16 +1,6 @@
 import React from "react";
 import "./searchHeader.css";
-import {
-  Dropdown,
-  Container,
-  Row,
-  Col,
-  Navbar,
-  Form,
-  FormControl,
-  Button,
-} from "react-bootstrap";
-import { useState } from "react";
+import { Form, FormControl } from "react-bootstrap";
 
 function SearchHeader({ title, setTitle }) {
   const handleInput = (e) => {
